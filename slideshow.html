@@ -1,0 +1,28 @@
+{% if template == "index" and settings.display_slideshow %}
+<div class="inner-wrap">
+      <section id="slideshow" class="row">
+        <div class="span12 slideshow">
+          <div class="flexslider">
+            <ul class="slides unstyled">
+              {% for i in (1..4) %}
+              {% capture display_slideshow %}display_slideshow_{{ i }}{% endcapture %}
+              {% capture slide %}slideshow_{{ i }}.jpg{% endcapture %}
+              {% capture link %}image_{{ i }}_link{% endcapture %}
+              {% capture alt %}image_{{ i }}_alt{% endcapture %}
+              {% capture slide_title %}slide_{{ i }}_title{% endcapture %}
+              {% capture slide_caption %}slide_{{ i }}_caption{% endcapture %}
+              {% if settings[display_slideshow] %}
+              <li class="slide"><img src="{{ slide | asset_url }}" data-url="{{ settings[link] }}" class="slide-img" alt="{{ settings[alt] }}" />
+             <a href="{{ settings[link] }}"> <section class="banner-description">
+							<h1>{{ settings[slide_title] }}</h1>
+							<p>{{ settings[slide_caption] }}</p>
+               </section></a></li>
+              {% endif %}             
+              {% endfor %}
+            </ul>
+          </div> <!-- /.flexslider -->
+         <!-- <div class="custom-flexslider-controls"></div> /.custom-flexslider-controls -->
+        </div> <!-- /.span12.slideshow -->
+      </section> <!-- /#slideshow.row -->
+</div>
+      {% endif %}
