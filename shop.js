@@ -52,7 +52,7 @@ jQuery(document).ready(function($){
     padding:0,
     'titleShow': false,
     overlayColor: '{{ settings.image_zoom_bg_color }}',
-    overlayOpacity: {{ settings.image_zoom_opacity }}
+    overlayOpacity: '{{ settings.image_zoom_opacity }}'
   });
   
   {% if settings.include_masonry %}
