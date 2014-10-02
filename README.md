@@ -7,7 +7,7 @@ This is a responsive carousel you can implement into any Shopify template. There
 Add CSS and Javascript
 ================
 
-Upload the flexslideshow.js, shop.js, and slideshow.css files to the assets folder.
+Upload the flexslideshow.js, shop.js, and slideshow.css files to the assets folder. After you add the files, link the javascript and css files listed above in the head of the document.
 
 
 
