@@ -11,6 +11,37 @@ Upload the flexslideshow.js, shop.js, and slideshow.css files to the assets fold
 
 
 
+Link CSS/JS tag in the theme.liquid file (or the theme with your wrapper code)
+================
+
+Copy and paste this code between the <head></head> tags:
+
+{{ 'slideshow.css' | asset_url | stylesheet_tag }}
+{{ 'shop.js' | asset_url | script_tag }}
+
+
+
+Link JS tag in the theme.liquid file (or the theme with your wrapper code)
+================
+
+Copy and paste this code at the very bottom of the website right before the closing </body> tag
+
+{{ 'flexslideshow.js' | asset_url | script_tag }}
+<script type="text/javascript">
+  $(function(){
+    SyntaxHighlighter.all();
+  });
+  $(window).load(function(){
+    $('.flexslider').flexslider({
+      animation: "slide",
+      start: function(slider){
+        $('body').removeClass('loading');
+      }
+    });
+  });
+</script>
+
+
 Add Slideshow-Settings.html
 ================
 
